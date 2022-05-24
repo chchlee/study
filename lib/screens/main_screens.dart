@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:traveam/home/home_screen.dart';
+import 'package:traveam/screens/book/book_screen.dart';
+import 'package:traveam/screens/person/person_screen.dart';
+import 'package:traveam/screens/search/search_screen.dart';
+import 'package:traveam/screens/upload/upload_screen.dart';
 
 class MainScreens extends StatefulWidget {
   const MainScreens({Key? key}) : super(key: key);
@@ -17,26 +22,21 @@ class _MainScreensState extends State<MainScreens> {
       body: IndexedStack(
         index: _selectedIndex,
         children: [
-          Container(
-            color: Colors.orange[100],
-            child: Center(
-              child: Text(
-                'IndexedStack 1',
-                style: TextStyle(fontSize: 20, color: Colors.black),
-              ),
-            ),
-          ),
-          Container(
-            color: Colors.redAccent[100],
-            child: Center(
-                child: Text(
-              'IndexedStack 2',
-              style: TextStyle(fontSize: 20, color: Colors.black),
-            )),
-          )
+          HomeScreen(),
+          SearchScreen(),
+          UploadScreen(),
+          BookScreen(),
+          PersonScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
         items: [
           BottomNavigationBarItem(
               label: '홈',
@@ -58,12 +58,6 @@ class _MainScreensState extends State<MainScreens> {
                 CupertinoIcons.person,
               )),
         ],
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        currentIndex: _selectedIndex,
       ),
     );
   }
