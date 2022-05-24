@@ -31,28 +31,30 @@ class _MainScreensState extends State<MainScreens> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType
+            .fixed, // BottomNavigationBarType.fixed는 3개 이상의 아이템을 표시할 때 설정
         onTap: (index) {
           setState(() {
             _selectedIndex = index;
           });
         },
         items: [
-          BottomNavigationBarItem(
-              label: '홈',
+          const BottomNavigationBarItem(
+              // Flutter에 변하지 않는 위젯임을 알려줘서, 컴파일 시점에서 미리 위젯을 만들어둬 런타임
+              label: '홈', // 시점에서 위젯을 만들어 줄 필요가 없어서 성능이 빨라짐.
               icon: Icon(
                 CupertinoIcons.home,
               )),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               label: '탐색',
               icon: Icon(
                 CupertinoIcons.search,
               )),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               label: '업로드', icon: Icon(FontAwesomeIcons.upload)),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               label: '앨범', icon: Icon(FontAwesomeIcons.bookOpen)),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               label: '내정보',
               icon: Icon(
                 CupertinoIcons.person,
