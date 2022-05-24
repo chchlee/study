@@ -17,6 +17,7 @@ AppBarTheme appTheme() {
       centerTitle: false,
       color: Colors.white,
       elevation: 0.0,
+      // ignore: deprecated_member_use
       textTheme: TextTheme(
           headline6: GoogleFonts.nanumGothic(
         fontSize: 16,
@@ -29,6 +30,6 @@ ThemeData theme() {
   return ThemeData(
       scaffoldBackgroundColor: Colors.white,
       textTheme: textTheme(),
-      appBarTheme: appTheme(),
+      // appBarTheme: appTheme(),
       primaryColor: Colors.orange);
 }

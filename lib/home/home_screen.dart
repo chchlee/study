@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               width: 4.0,
             ),
-            const Icon(CupertinoIcons.chevron_down, size: 15.0)
+            const Icon(CupertinoIcons.chevron_down, size: 15.0),
           ],
         ),
         actions: [
@@ -27,6 +27,7 @@ class HomeScreen extends StatelessWidget {
         bottom: const PreferredSize(
             child: Divider(thickness: 0.5, height: 0.5, color: Colors.grey),
             preferredSize: Size.fromHeight(0.5)),
+        // title: Text('AppBar Test'),
       ),
       body: Container(),
     );
