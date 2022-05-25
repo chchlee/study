@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boxicons/flutter_boxicons.dart';
+import 'package:traveam/home/bloglink_screen.dart';
+import 'package:traveam/home/feed_screen.dart';
+import 'package:traveam/home/profile_screen.dart';
+
 import 'package:traveam/theme.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -29,7 +34,24 @@ class HomeScreen extends StatelessWidget {
             preferredSize: Size.fromHeight(0.5)),
         // title: Text('AppBar Test'),
       ),
-      body: Container(),
+      body: Column(
+        children: [
+          Padding(padding: EdgeInsets.all(8.0)),
+          ProfileScreen(),
+          SizedBox(
+            height: 15,
+          ),
+          MyWidget(),
+          SizedBox(
+            height: 12,
+          ),
+          BloglinkScreen(),
+          Row(
+            children: [Icon(Boxicons.bx_like)],
+          ),
+        ],
+      ),
+      // body: CustomCarouselFB2(), //CustomCarouselFB2()),
     );
   }
 }
